@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UC - Banco de dados SENAI</title>
+    <!-- Tailwind CSS para estilização rápida e moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Esconder barra de rolagem mas manter funcionamento */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#141414] text-white font-sans antialiased min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-2xl font-black tracking-wider text-cyan-400">
+            <i class="fa-solid fa-database"></i>
+            <span>DB<span class="text-white font-light">FLIX</span></span>
+        </div>
+        <a href="#modulos" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold px-4 py-2 rounded transition text-sm">
+            Explorar Módulos
+        </a>
+    </nav>
+
+    <!-- HERO SECTION / APRESENTAÇÃO DO PROFESSOR -->
+    <section class="relative pt-28 pb-16 px-6 md:px-16 flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto border-b border-gray-800">
+        
+        <!-- Foto do Professor com Borda Azul -->
+        <div class="relative shrink-0">
+            <img 
+                src="https://raw.githubusercontent.com/Marciocavjr/imgprojetos/c58e7edbf911274e401dad94c733998ad493c59a/Pessoal/20260901_162643.jpg" 
+                alt="Foto do Professor" 
+                class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.3)]"
+            />
+            <div class="absolute bottom-1 right-2 bg-cyan-500 text-black text-xs font-bold px-2 py-0.5 rounded-full">
+                Professor
+            </div>
+        </div>
+
+        <!-- Bio do Professor -->
+        <div class="text-center md:text-left space-y-4">
+            <span class="text-cyan-400 font-semibold text-sm uppercase tracking-widest">Apresentação</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                Banco de Dados Docente: Marcio Cavalcante
+            </h1>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl">
+                Desenvolvedor de sistemas, técnico em eletrônica com mais de uma década de experiência na indústria e docente no SENAI, unindo a vivência em multinacionais com a paixão por formar a nova geração da tecnologia.
+            </p>
+            <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-medium text-gray-400">
+                <span class="bg-gray-800 px-3 py-1 rounded-full"><i class="fa-solid fa-industry text-cyan-400 mr-1.5"></i> +10 Anos na Indústria</span>
+                <span class="bg-gray-800 px-3 py-1 rounded-full"><i class="fa-solid fa-chalkboard-user text-cyan-400 mr-1.5"></i> Docente SENAI</span>
+                <span class="bg-gray-800 px-3 py-1 rounded-full"><i class="fa-solid fa-code text-cyan-400 mr-1.5"></i> Dev de Sistemas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRILHA DE CONTEÚDOS / MÓDULOS -->
+    <main id="modulos" class="px-6 md:px-16 py-10 space-y-12 max-w-7xl mx-auto">
+
+        <!-- MÓDULO 1 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 1: Apresentação e Conceitos Fundamentais
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Video Card -->
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9Jkf2t2ugJs?si=doVnSo7AlZXq_iHl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Aula Inaugural: O Mundo dos Dados</h3>
+                        <p class="text-xs text-gray-400 mt-1">Visão geral do curso e conceitos básicos.</p>
+                    </div>
+                </div>
+                <!-- Podcast Card -->
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #01: Por que aprender Banco de Dados?</h3>
+                        <p class="text-xs text-gray-400 mt-1">Discussão em áudio sobre a importância do tema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 2 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 2: Arquiteturas de Dados, NoSQL e Atuação Profissional
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                                       <iframe width="560" height="315" src="https://www.youtube.com/embed/TYSxzY-a-Ok?si=6FSLZWxKiNle59gW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Arquiteturas Modernas e NoSQL</h3>
+                        <p class="text-xs text-gray-400 mt-1">Conheça bancos relacionais e não-relacionais.</p>
+                    </div>
+                </div>
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #02: Atuação no Mercado</h3>
+                        <p class="text-xs text-gray-400 mt-1">Relatos da vivência em multinacionais de tecnologia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 3 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 3: Modelagem Conceitual e Lógica de Dados
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Diagramas ER e Modelagem Lógica</h3>
+                        <p class="text-xs text-gray-400 mt-1">Como desenhar a estrutura de dados ideal.</p>
+                    </div>
+                </div>
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #03: Erros Comuns de Modelagem</h3>
+                        <p class="text-xs text-gray-400 mt-1">Casos reais e armadilhas no design de sistemas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 4 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 4: Normalização e Padronização de Dados
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Regras de Normalização (1FN a 3FN)</h3>
+                        <p class="text-xs text-gray-400 mt-1">Evitando redundância e inconsistência de dados.</p>
+                    </div>
+                </div>
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #04: Padronização na Prática</h3>
+                        <p class="text-xs text-gray-400 mt-1">Como manter a integridade dos dados no dia a dia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 5 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 5: SGBDs, Modelo Físico e Linguagem SQL (DDL e DML)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-code text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO PRÁTICO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Criando Bancos e Tabelas (DDL & DML)</h3>
+                        <p class="text-xs text-gray-400 mt-1">Mão na massa com scripts SQL no SGBD.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 6 -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
+                Módulo 6: Consultas Avançadas, Otimização e Automação
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
+                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
+                        <i class="fa-solid fa-bolt text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO AVANÇADO</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Joins, Índices e Performance</h3>
+                        <p class="text-xs text-gray-400 mt-1">Otimizando queries para alto desempenho.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-xs text-gray-600 py-8 border-t border-gray-900">
+        <p>&copy; 2026 DBFLIX - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
