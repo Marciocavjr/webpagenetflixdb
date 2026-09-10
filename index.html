@@ -9,9 +9,12 @@
     <!-- FontAwesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Esconder barra de rolagem mas manter funcionamento */
+        /* Esconder barra de rolagem mantendo funcionamento */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Remover o indicador padrão de details/summary no Safari e Chrome */
+        summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-[#141414] text-white font-sans antialiased min-h-screen">
@@ -34,7 +37,7 @@
         <div class="relative shrink-0">
             <img 
                 src="https://raw.githubusercontent.com/Marciocavjr/imgprojetos/c58e7edbf911274e401dad94c733998ad493c59a/Pessoal/20260901_162643.jpg" 
-                alt="Foto do Professor" 
+                alt="Foto do Professor Marcio Cavalcante" 
                 class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.3)]"
             />
             <div class="absolute bottom-1 right-2 bg-cyan-500 text-black text-xs font-bold px-2 py-0.5 rounded-full">
@@ -46,7 +49,7 @@
         <div class="text-center md:text-left space-y-4">
             <span class="text-cyan-400 font-semibold text-sm uppercase tracking-widest">Apresentação</span>
             <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
-                Banco de Dados Docente: Marcio Cavalcante
+                Banco de Dados | Docente: Marcio Cavalcante
             </h1>
             <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl">
                 Desenvolvedor de sistemas, técnico em eletrônica com mais de uma década de experiência na indústria e docente no SENAI, unindo a vivência em multinacionais com a paixão por formar a nova geração da tecnologia.
@@ -60,162 +63,229 @@
     </section>
 
     <!-- TRILHA DE CONTEÚDOS / MÓDULOS -->
-    <main id="modulos" class="px-6 md:px-16 py-10 space-y-12 max-w-7xl mx-auto">
+    <main id="modulos" class="px-6 md:px-16 py-10 space-y-6 max-w-7xl mx-auto">
 
         <!-- MÓDULO 1 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 1: Apresentação e Conceitos Fundamentais
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <details open class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 1: Apresentação e Conceitos Fundamentais</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <!-- Video Card -->
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9Jkf2t2ugJs?si=doVnSo7AlZXq_iHl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                        <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/9Jkf2t2ugJs?si=doVnSo7AlZXq_iHl" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Aula Inaugural: O Mundo dos Dados</h3>
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Aula Inaugural: O Mundo dos Dados</h3>
                         <p class="text-xs text-gray-400 mt-1">Visão geral do curso e conceitos básicos.</p>
                     </div>
                 </div>
+
                 <!-- Podcast Card -->
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #01: Apresentação e Conceitos Fundamentais</h3>
+                        <p class="text-xs text-gray-400 mt-1">Discussão em áudio sobre a introdução e conceitos essenciais de banco de dados.</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #01: Por que aprender Banco de Dados?</h3>
-                        <p class="text-xs text-gray-400 mt-1">Discussão em áudio sobre a importância do tema.</p>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/1r_bbd-bC8LAFPFg777JBOKpwkRp9UzbP/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
 
         <!-- MÓDULO 2 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 2: Arquiteturas de Dados, NoSQL e Atuação Profissional
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                                       <iframe width="560" height="315" src="https://www.youtube.com/embed/TYSxzY-a-Ok?si=6FSLZWxKiNle59gW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+        <details class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 2: Arquiteturas de Dados, NoSQL e Atuação Profissional</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Video Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                        <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/TYSxzY-a-Ok?si=6FSLZWxKiNle59gW" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Arquiteturas Modernas e NoSQL</h3>
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Arquiteturas Modernas e NoSQL</h3>
                         <p class="text-xs text-gray-400 mt-1">Conheça bancos relacionais e não-relacionais.</p>
                     </div>
                 </div>
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+
+                <!-- Podcast Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #02: Arquiteturas de Dados e Atuação Profissional</h3>
+                        <p class="text-xs text-gray-400 mt-1">Relatos da vivência em multinacionais de tecnologia e NoSQL.</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #02: Atuação no Mercado</h3>
-                        <p class="text-xs text-gray-400 mt-1">Relatos da vivência em multinacionais de tecnologia.</p>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/1LL7NsRq8Zhxcm1t2WteoEy7afPztDMcS/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
 
         <!-- MÓDULO 3 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 3: Modelagem Conceitual e Lógica de Dados
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+        <details class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 3: Modelagem Conceitual e Lógica de Dados</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Video Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                        <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/WKwKiMLraxE?si=tG4igLoiXNjSwoRn" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Diagramas ER e Modelagem Lógica</h3>
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Diagramas ER e Modelagem Lógica</h3>
                         <p class="text-xs text-gray-400 mt-1">Como desenhar a estrutura de dados ideal.</p>
                     </div>
                 </div>
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+
+                <!-- Podcast Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #03: Modelagem Conceitual e Lógica</h3>
+                        <p class="text-xs text-gray-400 mt-1">Casos reais e armadilhas no design conceitual de dados.</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #03: Erros Comuns de Modelagem</h3>
-                        <p class="text-xs text-gray-400 mt-1">Casos reais e armadilhas no design de sistemas.</p>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/1w2EfeW2MVP3PiTaDuyztvvolQkvdqdno/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
 
         <!-- MÓDULO 4 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 4: Normalização e Padronização de Dados
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO</span>
+        <details class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 4: Normalização e Padronização de Dados</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Video Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                        <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/AUhZJeHIXK4?si=lKv9bLZgDb4OIu48" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Regras de Normalização (1FN a 3FN)</h3>
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Regras de Normalização (1FN a 3FN)</h3>
                         <p class="text-xs text-gray-400 mt-1">Evitando redundância e inconsistência de dados.</p>
                     </div>
                 </div>
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-podcast text-4xl text-purple-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded">PODCAST</span>
+
+                <!-- Podcast Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #04: Normalização e Padronização de Dados</h3>
+                        <p class="text-xs text-gray-400 mt-1">Como manter a integridade das tabelas no dia a dia.</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-purple-400 transition">Podcast #04: Padronização na Prática</h3>
-                        <p class="text-xs text-gray-400 mt-1">Como manter a integridade dos dados no dia a dia.</p>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/18gsyLNmszP11CxpmIYZUNILwi4bH_ots/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
 
         <!-- MÓDULO 5 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 5: SGBDs, Modelo Físico e Linguagem SQL (DDL e DML)
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-code text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO PRÁTICO</span>
+        <details class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 5: SGBDs, Modelo Físico e Linguagem SQL (DDL e DML)</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Video Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                       <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/j_Mm3ZbI5Ew?si=lqesYfgMfqx3qzxE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Criando Bancos e Tabelas (DDL & DML)</h3>
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO PRÁTICO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Criando Bancos e Tabelas (DDL & DML)</h3>
                         <p class="text-xs text-gray-400 mt-1">Mão na massa com scripts SQL no SGBD.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- MÓDULO 6 -->
-        <section class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-cyan-400 pl-3">
-                Módulo 6: Consultas Avançadas, Otimização e Automação
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-1">
-                    <div class="relative aspect-video bg-gray-900 flex items-center justify-center">
-                        <i class="fa-solid fa-bolt text-4xl text-cyan-400 group-hover:scale-125 transition duration-300"></i>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">VÍDEO AVANÇADO</span>
+                <!-- Podcast Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #05: SGBDs, Modelo Físico e Linguagem SQL</h3>
+                        <p class="text-xs text-gray-400 mt-1">Aprofundamento sobre implementação física e boas práticas em SQL.</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-base group-hover:text-cyan-400 transition">Joins, Índices e Performance</h3>
-                        <p class="text-xs text-gray-400 mt-1">Otimizando queries para alto desempenho.</p>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/1CFjiLRYn_O4fEiihBwnfZD3XJ0gkXso6/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
+
+        <!-- MÓDULO 6 -->
+        <details class="group bg-[#1a1a1a] rounded-xl border border-gray-800 p-5 transition duration-300">
+            <summary class="cursor-pointer flex items-center justify-between text-lg md:text-xl font-bold border-l-4 border-cyan-400 pl-3 select-none hover:text-cyan-400 transition">
+                <span>Módulo 6: Consultas Avançadas, Otimização e Automação</span>
+                <i class="fa-solid fa-chevron-down text-cyan-400 group-open:rotate-180 transition-transform duration-300"></i>
+            </summary>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Video Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-cyan-500 transition duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-gray-900 w-full">
+                        <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/hrgM14Tecao?si=vOrGVpK1xRYzmwYl" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-1">VÍDEO AVANÇADO</span>
+                        <h3 class="font-bold text-base group-hover/card:text-cyan-400 transition">Joins, Índices e Performance</h3>
+                        <p class="text-xs text-gray-400 mt-1">Otimizando queries para alto desempenho.</p>
+                    </div>
+                </div>
+
+                <!-- Podcast Card -->
+                <div class="group/card bg-[#1f1f1f] rounded-lg overflow-hidden border border-gray-800 hover:border-purple-500 transition duration-300 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">PODCAST</span>
+                            <i class="fa-solid fa-podcast text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-base group-hover/card:text-purple-400 transition">Podcast #06: Consultas Avançadas, Otimização e Automação</h3>
+                        <p class="text-xs text-gray-400 mt-1">Técnicas avançadas de performance e automação no banco de dados.</p>
+                    </div>
+                    <div class="mt-4">
+                        <iframe src="https://drive.google.com/file/d/1si5uOpOP2nSjXZlQWFkQuIz6bLy93E1M/preview" class="w-full h-12 rounded border-0" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </details>
 
     </main>
 
